@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// table {
+//   @apply border-collapse border;
+
+//   td {
+//     @apply border p-1;
+//   }
+// }
+
+.customMarker {
+  @apply relative text-xs after:absolute after:top-0 after:content-[''] after:border-t-gray-400 
+  after:border-[6px] after:border-transparent after:-translate-x-1/2;
+  > div {
+    @apply bg-white flex overflow-hidden rounded-lg border-current absolute bottom-0 whitespace-nowrap border-2 border-gray-400 -translate-x-1/2 shadow-md;
+    span {
+      @apply px-1.5 py-1 first:font-bold first:text-white last:truncate last:w-16 text-center last:block;
+    }
+  }
+}
