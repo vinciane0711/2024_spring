@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { onMounted, ref, watch, computed, onBeforeMount } from 'vue'
+import { onMounted, ref, watch, computed } from 'vue'
 import houseData from '@/assets/house_viewing.csv'
 import schoolData from '@/assets/school.csv'
+
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 // import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
@@ -131,7 +132,7 @@ const initMap = () => {
     // markerZoomAnimation: true,
   }).setMinZoom(12)
 
-  const layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map.value)
+  L.control.layers(baseMaps, overlayMaps).addTo(map.value)
 
   // const pane = map.value.createPane('house')
   // pane.style.zIndex = '800'
@@ -183,7 +184,7 @@ watch(selectedId, () => {
         name=""
         id=""
       >
-        <option v-for="(h, i) in data" :value="h[0]">
+        <option v-for="h in data" :value="h[0]">
           {{ h[1].name }}
         </option>
       </select>
