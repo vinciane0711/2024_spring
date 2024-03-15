@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { onMounted, ref, watch, computed } from 'vue'
+// @ts-ignore
 import houseData from '@/assets/house_viewing.csv'
+// @ts-ignore
 import schoolData from '@/assets/school.csv'
 
 import L from 'leaflet'
